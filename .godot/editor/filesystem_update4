@@ -1,0 +1,6 @@
+res://scenes/topdown_test.tscn
+res://scenes/player.tscn
+res://scenes/main.tscn
+res://scenes/PlayerPlataform.tscn
+res://scenes/PlayerPlataform.gd
+res://scenes/plataform.tscn
