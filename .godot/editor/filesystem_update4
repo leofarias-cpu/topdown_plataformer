@@ -1,1 +1,10 @@
 res://defaults/tilemap_default.tscn
+res://scenes/player_TopDown.tscn
+res://scenes/main.tscn
+res://level1.tscn
+res://scripts/main.gd
+res://scenes/levels/level1.tscn
+res://scripts/player.gd
+res://scenes/bird.tscn
+res://scenes/bird.gd
+res://scripts/Next_level.gd

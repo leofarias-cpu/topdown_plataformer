@@ -1,26 +1,28 @@
-<<<<<<< HEAD
-[gd_scene load_steps=2 format=3 uid="uid://dqmb26wyrxeeb"]
+[gd_scene load_steps=6 format=3 uid="uid://3ububpkvt36j"]
 
-[ext_resource type="PackedScene" uid="uid://tevc7sai66ek" path="res://garbage/PrimeiraFase.tscn" id="1_lipl3"]
-=======
-[gd_scene load_steps=4 format=3 uid="uid://dqmb26wyrxeeb"]
-
-[ext_resource type="PackedScene" uid="uid://o00ve67qlqxo" path="res://scenes/camera_2d.tscn" id="1_1c2rn"]
-[ext_resource type="PackedScene" uid="uid://c6tuvihbwg0py" path="res://scenes/plataform.tscn" id="1_bn7bd"]
-[ext_resource type="PackedScene" uid="uid://buokleqxn40ko" path="res://scenes/PlayerPlataform.tscn" id="2_4i61m"]
->>>>>>> 70834787814b36ef0f2dc9a73bd67ff5b7efe2e4
+[ext_resource type="PackedScene" uid="uid://gpm16wymq65" path="res://scenes/player_TopDown.tscn" id="1_b3wus"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_xiyuj"]
+[ext_resource type="PackedScene" uid="uid://o00ve67qlqxo" path="res://scenes/camera_2d.tscn" id="3_x3nfb"]
+[ext_resource type="PackedScene" uid="uid://bkl2jug1tkcmi" path="res://level1.tscn" id="4_2qj0v"]
+[ext_resource type="PackedScene" uid="uid://dhbkwn8oxf3id" path="res://scenes/bird.tscn" id="5_dgptd"]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_xiyuj")
 
-[node name="Camera2D" parent="." instance=ExtResource("1_1c2rn")]
+[node name="player" parent="." instance=ExtResource("1_b3wus")]
+position = Vector2(8, 136)
 
-<<<<<<< HEAD
-[node name="PrimeiraFase" parent="." instance=ExtResource("1_lipl3")]
-position = Vector2(-184, -40)
-=======
-[node name="plataform" parent="." instance=ExtResource("1_bn7bd")]
-position = Vector2(-192, 0)
+[node name="Camera2D" parent="." instance=ExtResource("3_x3nfb")]
+position = Vector2(48, 64)
+zoom = Vector2(3.5, 3.5)
 
-[node name="PlayerPlataform" parent="." instance=ExtResource("2_4i61m")]
-position = Vector2(-184, -8)
->>>>>>> 70834787814b36ef0f2dc9a73bd67ff5b7efe2e4
+[node name="topdown_default" parent="." instance=ExtResource("4_2qj0v")]
+
+[node name="Bird" parent="." instance=ExtResource("5_dgptd")]
+position = Vector2(72, 72)
+moves = [Vector2(0, 1), Vector2(1, 0), Vector2(0, -1)]
+
+[connection signal="body_exited" from="topdown_default/Hole" to="." method="_on_hole_body_exited"]
+
+[editable path="topdown_default"]
+[editable path="Bird"]

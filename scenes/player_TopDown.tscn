@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://gpm16wymq65"]
+[gd_scene load_steps=8 format=3 uid="uid://gpm16wymq65"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_4ornh"]
 [ext_resource type="Texture2D" uid="uid://cp1exeho5q0uu" path="res://sprites/player.png" id="1_jwmdd"]
@@ -14,6 +14,9 @@ radius = 4.03113
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gfxpa"]
 radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8dr1w"]
+radius = 1.0
 
 [node name="player" type="CharacterBody2D"]
 z_index = 10
@@ -47,3 +50,38 @@ shape = SubResource("CircleShape2D_jsskt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colisao_direita"]
 position = Vector2(8, 0)
 shape = SubResource("CircleShape2D_gfxpa")
+
+[node name="Colisao_cima_outer" type="Area2D" parent="."]
+position = Vector2(0, -32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisao_cima_outer"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_wn1tp")
+
+[node name="Colisao_baixo_outer" type="Area2D" parent="."]
+position = Vector2(0, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisao_baixo_outer"]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_tefxg")
+
+[node name="Colisao_esquerda_outer" type="Area2D" parent="."]
+position = Vector2(-24, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisao_esquerda_outer"]
+position = Vector2(-8, -0.5)
+shape = SubResource("CircleShape2D_jsskt")
+
+[node name="Colisao_direita_outer" type="Area2D" parent="."]
+position = Vector2(24, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisao_direita_outer"]
+position = Vector2(8, 0)
+shape = SubResource("CircleShape2D_gfxpa")
+
+[node name="Colisor" type="Area2D" parent="."]
+
+[node name="Colisinho" type="CollisionShape2D" parent="Colisor"]
+shape = SubResource("CircleShape2D_8dr1w")
+
+[connection signal="area_entered" from="Colisor" to="." method="_on_colisor_area_entered"]

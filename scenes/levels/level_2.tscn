@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvb358t2ryuqf"]
+
+[ext_resource type="PackedScene" uid="uid://jjis1y0ycc67" path="res://defaults/tilemap_default.tscn" id="1_0fmnl"]
+
+[node name="level2" type="Node2D"]
+
+[node name="topdown_default" parent="." instance=ExtResource("1_0fmnl")]

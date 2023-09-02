@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkl2jug1tkcmi"]
+
+[ext_resource type="PackedScene" uid="uid://jjis1y0ycc67" path="res://defaults/tilemap_default.tscn" id="1_rpaoc"]
+[ext_resource type="PackedScene" uid="uid://gpm16wymq65" path="res://scenes/player_TopDown.tscn" id="2_45yat"]
+[ext_resource type="PackedScene" uid="uid://dhbkwn8oxf3id" path="res://scenes/bird.tscn" id="2_8431t"]
+[ext_resource type="Script" path="res://scripts/Next_level.gd" id="4_eg1e8"]
+[ext_resource type="PackedScene" uid="uid://cvb358t2ryuqf" path="res://scenes/levels/level_2.tscn" id="5_3tymb"]
+
+[sub_resource type="GDScript" id="GDScript_wpxsj"]
+script/source = "extends Area2D
+
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ypxbd"]
+
+[node name="level_1" instance=ExtResource("1_rpaoc")]
+layer_2/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 2, 0, 0, 131072, 0, 0, 131073, 0, 0, 196609, 0, 0, 196608, 0, 0, 262144, 0, 0, 262145, 0, 0, 3, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, 262148, 0, 0, 262149, 0, 0, 327685, 0, 0, 327684, 0, 0, 393217, 0, 0, 458753, 0, 0, 524289, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0)
+
+[node name="Hole" type="Area2D" parent="." index="0"]
+script = SubResource("GDScript_wpxsj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hole" index="0"]
+polygon = PackedVector2Array(0, 96, 32, 96, 32, 144, 0, 144)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Hole" index="1"]
+polygon = PackedVector2Array(0, 0, 0, 80, 32, 80, 32, 32, 48, 32, 48, 16, 64, 16, 64, 48, 80, 48, 80, 0)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Hole" index="2"]
+polygon = PackedVector2Array(64, 64, 96, 64, 96, 96, 64, 96)
+
+[node name="Bird" parent="." index="1" instance=ExtResource("2_8431t")]
+position = Vector2(72, 72)
+
+[node name="player" parent="." index="2" instance=ExtResource("2_45yat")]
+position = Vector2(8, 136)
+
+[node name="Next_level" type="Area2D" parent="." index="3"]
+position = Vector2(88, 88)
+script = ExtResource("4_eg1e8")
+next_level = ExtResource("5_3tymb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level" index="0"]
+shape = SubResource("CircleShape2D_ypxbd")
