@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://tevc7sai66ek"]
+
+[ext_resource type="PackedScene" uid="uid://b6u6fvtxqgxd2" path="res://garbage/topdown_test.tscn" id="1_2b5yl"]
+[ext_resource type="PackedScene" uid="uid://gpm16wymq65" path="res://garbage/player.tscn" id="2_1vc1t"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TopDown" parent="." instance=ExtResource("1_2b5yl")]
+position = Vector2(4, 8)
+
+[node name="player" parent="." instance=ExtResource("2_1vc1t")]
+position = Vector2(108, 64)
+disable_mode = 2
+PIXELS = 16

@@ -1,17 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqmb26wyrxeeb"]
+[gd_scene load_steps=2 format=3 uid="uid://dqmb26wyrxeeb"]
 
-[ext_resource type="PackedScene" uid="uid://c6tuvihbwg0py" path="res://scenes/plataform.tscn" id="1_bn7bd"]
-[ext_resource type="PackedScene" uid="uid://buokleqxn40ko" path="res://scenes/PlayerPlataform.tscn" id="2_4i61m"]
+[ext_resource type="PackedScene" uid="uid://tevc7sai66ek" path="res://garbage/PrimeiraFase.tscn" id="1_lipl3"]
 
 [node name="main" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
-[node name="plataform" parent="." instance=ExtResource("1_bn7bd")]
-position = Vector2(-192, 0)
-
-[node name="PlayerPlataform" parent="." instance=ExtResource("2_4i61m")]
-position = Vector2(-184, -8)
-SPEED = 100.0
-JUMP_VELOCITY = -200.0
+[node name="PrimeiraFase" parent="." instance=ExtResource("1_lipl3")]
+position = Vector2(-184, -40)

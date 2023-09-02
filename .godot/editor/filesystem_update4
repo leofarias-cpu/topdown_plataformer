@@ -1,4 +1,1 @@
-res://scenes/plataform.tscn
-res://scenes/main.tscn
-res://scenes/topdown_test.tscn
-res://scripts/player_plataform.gd
+res://defaults/tilemap_default.tscn
