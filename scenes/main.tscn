@@ -1,11 +1,26 @@
+<<<<<<< HEAD
 [gd_scene load_steps=2 format=3 uid="uid://dqmb26wyrxeeb"]
 
 [ext_resource type="PackedScene" uid="uid://tevc7sai66ek" path="res://garbage/PrimeiraFase.tscn" id="1_lipl3"]
+=======
+[gd_scene load_steps=4 format=3 uid="uid://dqmb26wyrxeeb"]
+
+[ext_resource type="PackedScene" uid="uid://o00ve67qlqxo" path="res://scenes/camera_2d.tscn" id="1_1c2rn"]
+[ext_resource type="PackedScene" uid="uid://c6tuvihbwg0py" path="res://scenes/plataform.tscn" id="1_bn7bd"]
+[ext_resource type="PackedScene" uid="uid://buokleqxn40ko" path="res://scenes/PlayerPlataform.tscn" id="2_4i61m"]
+>>>>>>> 70834787814b36ef0f2dc9a73bd67ff5b7efe2e4
 
 [node name="main" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+[node name="Camera2D" parent="." instance=ExtResource("1_1c2rn")]
 
+<<<<<<< HEAD
 [node name="PrimeiraFase" parent="." instance=ExtResource("1_lipl3")]
 position = Vector2(-184, -40)
+=======
+[node name="plataform" parent="." instance=ExtResource("1_bn7bd")]
+position = Vector2(-192, 0)
+
+[node name="PlayerPlataform" parent="." instance=ExtResource("2_4i61m")]
+position = Vector2(-184, -8)
+>>>>>>> 70834787814b36ef0f2dc9a73bd67ff5b7efe2e4
