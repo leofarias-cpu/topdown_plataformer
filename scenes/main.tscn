@@ -1,16 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://dqmb26wyrxeeb"]
 
-[ext_resource type="PackedScene" uid="uid://b6u6fvtxqgxd2" path="res://scenes/topdown_test.tscn" id="1_y6w8f"]
-[ext_resource type="PackedScene" uid="uid://gpm16wymq65" path="res://scenes/player.tscn" id="2_3aqwt"]
+[ext_resource type="PackedScene" uid="uid://c6tuvihbwg0py" path="res://scenes/plataform.tscn" id="1_bn7bd"]
+[ext_resource type="PackedScene" uid="uid://buokleqxn40ko" path="res://scenes/PlayerPlataform.tscn" id="2_4i61m"]
 
 [node name="main" type="Node2D"]
 
-[node name="Node2D" parent="." instance=ExtResource("1_y6w8f")]
-position = Vector2(-184, -48)
-
-[node name="player" parent="." instance=ExtResource("2_3aqwt")]
-position = Vector2(-176, -8)
-PIXELS = 16
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+
+[node name="plataform" parent="." instance=ExtResource("1_bn7bd")]
+position = Vector2(-192, 0)
+
+[node name="PlayerPlataform" parent="." instance=ExtResource("2_4i61m")]
+position = Vector2(-184, -8)
