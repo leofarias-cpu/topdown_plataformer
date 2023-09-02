@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cghan70giutsk"]
+
+[ext_resource type="PackedScene" uid="uid://c6tuvihbwg0py" path="res://scenes/plataform.tscn" id="1_7lht1"]
+[ext_resource type="PackedScene" uid="uid://buokleqxn40ko" path="res://scenes/PlayerPlataform.tscn" id="2_0muph"]
+
+[node name="level_1" type="Node2D"]
+
+[node name="Plataform" type="Node" parent="."]
+
+[node name="plataform" parent="Plataform" instance=ExtResource("1_7lht1")]
+position = Vector2(-192, -8)
+
+[node name="PlayerPlataform" parent="Plataform" instance=ExtResource("2_0muph")]
+position = Vector2(-184, -16)
+
+[node name="Camera2D" type="Camera2D" parent="Plataform"]
+zoom = Vector2(3, 3)
+
+[node name="TopDown" type="Node" parent="."]

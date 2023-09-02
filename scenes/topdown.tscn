@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6u6fvtxqgxd2"]
 
-[ext_resource type="Texture2D" uid="uid://6ohsghtqfj2v" path="res://sprites/tileset.png" id="1_n2u7l"]
+[ext_resource type="Texture2D" uid="uid://6ohsghtqfj2v" path="res://sprites/tileset.png" id="1_mhxkv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o3kgu"]
-texture = ExtResource("1_n2u7l")
+texture = ExtResource("1_mhxkv")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0

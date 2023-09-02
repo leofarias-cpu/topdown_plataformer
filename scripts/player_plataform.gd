@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-@export var SPEED: float
-@export var JUMP_VELOCITY: float
+@export var SPEED: float = 100
+@export var JUMP_VELOCITY: float = -200
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var PIXELS: int
+@export var PIXELS: int = 16
 var last_move
 
 @onready var right_move = $Colisao_direita
