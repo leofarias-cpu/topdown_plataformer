@@ -13,3 +13,5 @@ position = Vector2(-192, 0)
 
 [node name="PlayerPlataform" parent="." instance=ExtResource("2_4i61m")]
 position = Vector2(-184, -8)
+SPEED = 100.0
+JUMP_VELOCITY = -200.0
