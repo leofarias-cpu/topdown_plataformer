@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=3 uid="uid://ypxm6b25ish3"]
+
+[ext_resource type="Script" path="res://scenes/interface/menu/menu.gd" id="1_yam7o"]
+[ext_resource type="FontFile" uid="uid://ddgrdchpfyqxv" path="res://dlxfont.ttf" id="2_drulf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmyt4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjcsm"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0a5ea"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ka8ew"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_xf67c"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_disabled_color = Color(0, 0, 0, 1)
+Button/colors/icon_focus_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_normal_color = Color(0, 0, 0, 1)
+Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
+Button/constants/h_separation = 0
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = SubResource("StyleBoxFlat_gmyt4")
+Button/styles/hover = SubResource("StyleBoxFlat_hjcsm")
+Button/styles/normal = SubResource("StyleBoxFlat_0a5ea")
+Button/styles/pressed = SubResource("StyleBoxFlat_ka8ew")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yam7o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -35.5
+offset_right = 80.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="startBtn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_xf67c")
+theme_override_colors/font_color = Color(0.494118, 0.713726, 0.85098, 0.996078)
+theme_override_colors/font_pressed_color = Color(0.0117647, 0.403922, 0.65098, 1)
+theme_override_colors/font_hover_color = Color(0.0156863, 0.541176, 0.74902, 1)
+theme_override_fonts/font = ExtResource("2_drulf")
+theme_override_font_sizes/font_size = 20
+text = "Start"
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="controlBtn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_xf67c")
+theme_override_colors/font_color = Color(0.494118, 0.713726, 0.85098, 0.996078)
+theme_override_colors/font_pressed_color = Color(0.0117647, 0.403922, 0.65098, 1)
+theme_override_colors/font_hover_color = Color(0.0156863, 0.541176, 0.74902, 1)
+theme_override_fonts/font = ExtResource("2_drulf")
+theme_override_font_sizes/font_size = 20
+text = "Controls
+"
+icon_alignment = 1
+
+[node name="quitBtn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_xf67c")
+theme_override_colors/font_color = Color(0.494118, 0.713726, 0.85098, 0.996078)
+theme_override_colors/font_pressed_color = Color(0.0117647, 0.403922, 0.65098, 1)
+theme_override_colors/font_hover_color = Color(0.0156863, 0.541176, 0.74902, 1)
+theme_override_fonts/font = ExtResource("2_drulf")
+theme_override_font_sizes/font_size = 20
+text = "Quit"
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[connection signal="pressed" from="VBoxContainer/startBtn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/controlBtn" to="." method="_on_control_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/quitBtn" to="." method="_on_quit_btn_pressed"]
